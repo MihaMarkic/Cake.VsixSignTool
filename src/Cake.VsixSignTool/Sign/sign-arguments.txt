@@ -1,0 +1,50 @@
+﻿Usage: vsixsigntool sign [options] <filename(s)>                              
+                                                                              
+Use the "sign" command to sign files using embedded signatures. Signing       
+protects an OPC based file from tampering, and allows users to verify the     
+signer (you) based on a signing certificate. The options below allow you to   
+ specify signing parameters and to select the signing certificate you wish    
+to use.                                                                       
+                                                                              
+Currently VsixSignTool supports only default signing policy, which is -       
+  - Sign all parts and relationships part including root relationships part,  
+      signature origin part and signature origin relationships part.          
+  - Only one signature is allowed i.e. all previous signatures present in     
+      package will be deleted before signing.                                 
+                                                                              
+                                                                              
+Certificate selection options:                                                
+/f <file>   Specify the signing cert in a file. If this file is a PFX with    
+            a password, the password may be supplied with the "/p" option.    
+            If the file is P7B file, use the "/csp" and "/k" options to       
+            specify the CSP and container name of the private key.            
+              This option is mandatory.                                       
+/p <pass.>  Specify a password to use when opening the PFX file.              
+/u <usage>  Specify the Enhanced Key Usage that must be present in the cert.  
+            The parameter may be specified by OID or by string. The default   
+            usage is "Code Signing" (1.3.6.1.5.5.7.3.3).                      
+              (This functionality has not been implemented yet.)              
+/sha1 <h>   Specify the SHA1 hash of the signing cert.                        
+                                                                              
+                                                                              
+Private Key selection options:                                                
+/csp <name> Specify the CSP containing the Private Key Container.             
+/k <name>   Specify the Key Container Name of the Private Key.                
+                                                                              
+Signing parameter options:                                                    
+/es         Embed the signing certificate within the signature part XML.      
+            If no "/e." option is specified, "/es" is default.                
+/ep         Embed the signing certificate as a separate part in the package.  
+/en         Do not embed the signing certificate in either the signature      
+            part XML or as a separate part in the package.                    
+/cc         Retrieve and embed the certificates in the certificate chain up   
+            to the root authority separately in the package.                  
+              (This functionality has not been implemented yet.)              
+/cn         Do not embed the certificates in the certificate chain            
+            separately in the package.                                        
+/fd <algo>  file digest algorithm                                             
+/t <URL>    Specify the timestamp server's URL. If this option is not         
+            present, the signed file will not be timestamped. A warning is    
+            generated if timestamping fails.                                  
+/tr <URL>   RFC3161_timestamp_URL                                             
+/td <algo>  use with /tr switch only                                          

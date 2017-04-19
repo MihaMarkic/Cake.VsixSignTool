@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Cake.VsixSignTool</id>
+    <version>$version$</version>
+    <authors>Righthand</authors>
+    <owners>Righthand</owners>
+    <title>Cake.VsixSignTool</title>
+    <description>Cake Build addin for VsixSignTool.</description>
+    <summary>VsixSignTool command line addin for cake build.</summary>
+    <licenseUrl>https://github.com/MihaMarkic/Cake.VsixSignTool/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MihaMarkic/Cake.VsixSignTool</projectUrl>
+    <releaseNotes>See https://github.com/MihaMarkic/Cake.VsixSignTool/blob/master/ReleaseNotes.md</releaseNotes>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) Righthand 2017</copyright>
+    <tags>Cake Script Build VsixSignTool</tags>
+
+    <dependencies>
+      <dependency id="Cake.Core" version="0.19.0" />
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="Cake.VsixSignTool\bin\Release\Cake.VsixSignTool.dll" target="lib\net45\Cake.VsixSignTool.dll" />
+    <file src="Cake.VsixSignTool\bin\Release\Cake.VsixSignTool.XML" target="lib\net45\Cake.VsixSignTool.XML" />
+    <file src="Cake.VsixSignTool\bin\Release\vsixsigntool.exe" target="lib\net45\vsixsigntool.exe" />
+  </files>
+</package>

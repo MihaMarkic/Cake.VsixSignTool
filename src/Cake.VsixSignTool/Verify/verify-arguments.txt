@@ -1,0 +1,36 @@
+﻿Usage: vsixsigntool verify [options] <filename(s)>                           
+                                                                             
+Use the "verify" command to validate embedded signatures. Verification       
+determines if the given opc based file has been modified after it was        
+signed, signing certificate was issued by a trusted party, whether that      
+certificate has been revoked, and whether the certificate is valid under a   
+specific policy. Options allow you to specify requirements that must be met  
+and to specify how to find the certificate, if appropriate.                  
+                                                                             
+Currently VsixSignTool supports only default signing policy, which is:       
+  - Verify that all parts and relationships part including root              
+      relationships part, signature origin part and signature origin         
+      relationships part are signed.                                         
+  - Only one signature is allowed i.e. package will be considered invalid    
+      if there are more than one signatures present in the package.          
+                                                                             
+Certificate selection options:                                               
+/f <file>   Specify the signing cert in a file. If this file is a PFX with   
+            a password, the password may be supplied with the "/p" option.   
+            If the file is P7B file, use the "/csp" and "/k" options to      
+            specify the CSP and container name of the private key.           
+            If there is an existing signing cert stored in the package, the  
+            stored cert is ignored.                                          
+/p <pass.>  Specify a password to use when opening the PFX file.             
+/sha1 <h>   Specify the SHA1 hash of the signing cert.                       
+                                                                             
+Private Key selection options:                                               
+/csp <name> Specify the CSP containing the Private Key Container.            
+/k <name>   Specify the Key Container Name of the Private Key.               
+                                                                             
+Other options:                                                               
+/q          No output on success and minimal output on failure. As always,   
+            VsixSignTool returns 0 on success and 1 on failure.              
+/v          Print verbose success and status messages. This may also provide 
+            slightly more information on error. If you want to see           
+            information about the signer, you should use this option.        
