@@ -49,8 +49,8 @@
     <Compile Include="BoolParameter.cs" />
     <Compile Include="NamespaceDoc.cs" />
     <Compile Include="ParameterAttribute.cs" />
-    <Compile Include="Verfiy\VsixSignToolVerifyAliases.cs" />
-    <Compile Include="Verfiy\VsixSignToolVerifySettings.cs" />
+    <Compile Include="Verify\VsixSignToolVerifyAliases.cs" />
+    <Compile Include="Verify\VsixSignToolVerifySettings.cs" />
     <Compile Include="Sign\VsixSignToolSignSettings.cs" />
     <Compile Include="VsixSignToolResolver.cs" />
     <Compile Include="VsixSignToolAliases.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="Sign\VsixSignToolSignAliases.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Verfiy\verify-arguments.txt" />
+    <Content Include="Verify\verify-arguments.txt" />
     <Content Include="Sign\sign-arguments.txt" />
   </ItemGroup>
   <ItemGroup>
