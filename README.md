@@ -5,6 +5,8 @@ A Cake AddIn that extends Cake with [VsixSignTool](https://msdn.microsoft.com/en
 [![cakebuild.net](https://img.shields.io/badge/WWW-cakebuild.net-blue.svg)](http://cakebuild.net/)
 [![NuGet](https://img.shields.io/nuget/v/Cake.VsixSignTool.svg)](https://www.nuget.org/packages/Cake.VsixSignTool)
 
+## Requirements
+Latest package is referencing Cake 0.22 or later.
 ## Including addin
 Including addin in cake script is easy.
 ```
