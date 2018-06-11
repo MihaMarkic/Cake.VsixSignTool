@@ -6,7 +6,16 @@ A Cake AddIn that extends Cake with [VsixSignTool](https://msdn.microsoft.com/en
 [![NuGet](https://img.shields.io/nuget/v/Cake.VsixSignTool.svg)](https://www.nuget.org/packages/Cake.VsixSignTool)
 
 ## Requirements
-Latest package is referencing Cake 0.22 or later.
+* 1.2.0: 
+
+  * Cake 0.28 or later
+
+  * BREAKING change: VSIX tool is now decoupled from adding, you have to add it manually to cake script, like
+
+    `#tool nuget:?package=Microsoft.VSSDK.Vsixsigntool`
+
+* 1.0.0: Latest package is referencing Cake 0.22 or later.
+
 ## Including addin
 Including addin in cake script is easy.
 ```
@@ -18,6 +27,7 @@ Including addin in cake script is easy.
 To use the addin just add it to Cake call the aliases and configure any settings you want.
 
 ```csharp
+#tool nuget:?package=Microsoft.VSSDK.Vsixsigntool
 #addin "Cake.VsixSignTool"
 Task("Sign")
     .Does(() => 
