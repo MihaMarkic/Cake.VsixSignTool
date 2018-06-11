@@ -14,17 +14,11 @@
     <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
 
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright (c) Righthand 2017</copyright>
+    <copyright>Copyright (c) Righthand 2018</copyright>
     <tags>Cake Script Build VsixSignTool</tags>
 
     <dependencies>
       <dependency id="Cake.Core" version="0.28.0" PrivateAssets="All" />
     </dependencies>
   </metadata>
-
-  <files>
-    <file src="Cake.VsixSignTool\bin\Release\Cake.VsixSignTool.dll" target="lib\net46\Cake.VsixSignTool.dll" />
-    <file src="Cake.VsixSignTool\bin\Release\Cake.VsixSignTool.XML" target="lib\net46\Cake.VsixSignTool.XML" />
-    <file src="Cake.VsixSignTool\bin\Release\vsixsigntool.exe" target="lib\net46\vsixsigntool.exe" />
-  </files>
 </package>
