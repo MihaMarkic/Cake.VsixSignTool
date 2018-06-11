@@ -18,7 +18,7 @@
     <tags>Cake Script Build VsixSignTool</tags>
 
     <dependencies>
-      <dependency id="Cake.Core" version="0.22.0" />
+      <dependency id="Cake.Core" version="0.28.0" PrivateAssets="All" />
     </dependencies>
   </metadata>
 

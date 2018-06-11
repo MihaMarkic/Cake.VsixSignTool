@@ -1,3 +1,5 @@
+# Cake.VsixSignTool 1.2.0
+- Bumps Cake to 0.28
 # Cake.VsixSignTool 1.1.0
 - Upgrades Cake to 0.22 (might be a breaking change)
 - Adds cake-contrib icon
