@@ -70,7 +70,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>copy "$(SolutionDir)packages\Microsoft.VSSDK.Vsixsigntool.15.0.26606\tools\vssdk\vsixsigntool.exe" "$(TargetDir)"</PreBuildEvent>
+    <PreBuildEvent>REM copy "$(SolutionDir)packages\Microsoft.VSSDK.VsixSignTool.15.7.27703\tools\vssdk\vsixsigntool.exe" "$(TargetDir)"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
