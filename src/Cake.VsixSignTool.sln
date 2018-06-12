@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.VsixSignTool", "Cake.VsixSignTool\Cake.VsixSignTool.csproj", "{8BD415DE-0D65-42BB-AF87-8AE39E3972BC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{73141119-9964-4C31-9406-A24AAF6AB92F}"
 	ProjectSection(SolutionItems) = preProject
-		build.cake = build.cake
+		appbuild.cake = appbuild.cake
 		build.ps1 = build.ps1
 		Cake.VsixSignTool.nuspec = Cake.VsixSignTool.nuspec
 		..\README.md = ..\README.md
@@ -16,20 +14,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.VsixSignToolTests", "Cake.VsixSignToolTests\Cake.VsixSignToolTests.csproj", "{7B0DDA5A-0A44-4288-8ABA-D7C08A11A63E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.VsixSignTool", "Cake.VsixSignTool\Cake.VsixSignTool.csproj", "{29978726-BD6F-41C6-8C4E-961B6D86FECC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8BD415DE-0D65-42BB-AF87-8AE39E3972BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BD415DE-0D65-42BB-AF87-8AE39E3972BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BD415DE-0D65-42BB-AF87-8AE39E3972BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BD415DE-0D65-42BB-AF87-8AE39E3972BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B0DDA5A-0A44-4288-8ABA-D7C08A11A63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B0DDA5A-0A44-4288-8ABA-D7C08A11A63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B0DDA5A-0A44-4288-8ABA-D7C08A11A63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B0DDA5A-0A44-4288-8ABA-D7C08A11A63E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29978726-BD6F-41C6-8C4E-961B6D86FECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29978726-BD6F-41C6-8C4E-961B6D86FECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29978726-BD6F-41C6-8C4E-961B6D86FECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29978726-BD6F-41C6-8C4E-961B6D86FECC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

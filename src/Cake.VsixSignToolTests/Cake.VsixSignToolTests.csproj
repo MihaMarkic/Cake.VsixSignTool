@@ -8,9 +8,9 @@
     <ProjectGuid>{7B0DDA5A-0A44-4288-8ABA-D7C08A11A63E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.Putty.Tests</RootNamespace>
-    <AssemblyName>Cake.Putty.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Cake.VsixSignTool.Tests</RootNamespace>
+    <AssemblyName>Cake.VsixSignTool.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cake.VsixSignTool\Cake.VsixSignTool.csproj">
-      <Project>{8bd415de-0d65-42bb-af87-8ae39e3972bc}</Project>
+      <Project>{29978726-bd6f-41c6-8c4e-961b6d86fecc}</Project>
       <Name>Cake.VsixSignTool</Name>
     </ProjectReference>
   </ItemGroup>

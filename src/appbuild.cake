@@ -17,9 +17,10 @@ Task("Default")
 	.Does (() =>
 	{
 		NuGetRestore (CakeVsixSignToolSln);
-		DotNetBuild (CakeVsixSignToolSln, c => {
+		MSBuild (CakeVsixSignToolSln, c => {
 			c.Configuration = "Release";
 			c.Verbosity = Verbosity.Minimal;
+			c.WithTarget("Clean;Build");
 		});
 });
 
@@ -31,26 +32,16 @@ Task("UnitTest")
 	});
 
 Task("NuGetPack")
-	.IsDependentOn("GetVersion")
 	.IsDependentOn("Default")
 	.IsDependentOn("UnitTest")
 	.Does (() =>
 {
 	CreateDirectory(Nupkg);
-	NuGetPack (CakeVsixSignToolNuspec, new NuGetPackSettings { 
-		Version = version,
-		Verbosity = NuGetVerbosity.Detailed,
-		OutputDirectory = Nupkg,
-		BasePath = "./",
-	});	
+	DotNetCorePack (CakeVsixSignToolProj, new DotNetCorePackSettings
+     {
+         Configuration = "Release",
+         OutputDirectory = "./nupkg/"
+     });
 });
-
-Task("GetVersion")
-	.Does(() => {
-		var assemblyInfo = ParseAssemblyInfo(AssemblyInfo);
-		var semVersion = string.Join(".", assemblyInfo.AssemblyVersion.Split('.').Take(3));
-		Information("Version {0}", semVersion);
-		version = semVersion;
-	});
 
 RunTarget (target);

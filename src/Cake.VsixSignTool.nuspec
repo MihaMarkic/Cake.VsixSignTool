@@ -16,9 +16,5 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright (c) Righthand 2018</copyright>
     <tags>Cake Script Build VsixSignTool</tags>
-
-    <dependencies>
-      <dependency id="Cake.Core" version="0.28.0" PrivateAssets="All" />
-    </dependencies>
   </metadata>
 </package>
