@@ -1,4 +1,9 @@
+# Cake.VsixSignTool 1.3.0
+
+- Bumps Cake to 0.33
+
 # Cake.VsixSignTool 1.2.0
+
 - Bumps Cake to 0.28
 - BREAKING: decouples from VSIX tool, it has to be manually referenced in cake script (see README)
 # Cake.VsixSignTool 1.1.0
