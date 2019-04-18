@@ -1,4 +1,5 @@
 ﻿#addin "Cake.FileHelpers"
+#tool "nuget:?package=NUnit.ConsoleRunner"
 
 var Project = Directory("./Cake.VsixSignTool/");
 var TestProject = Directory("./Cake.VsixSignToolTests/");
