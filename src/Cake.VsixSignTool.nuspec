@@ -11,8 +11,7 @@
     <licenseUrl>https://github.com/MihaMarkic/Cake.VsixSignTool/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MihaMarkic/Cake.VsixSignTool</projectUrl>
     <releaseNotes>See https://github.com/MihaMarkic/Cake.VsixSignTool/blob/master/ReleaseNotes.md</releaseNotes>
-    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
-
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright (c) Righthand 2018</copyright>
     <tags>Cake Script Build VsixSignTool</tags>
