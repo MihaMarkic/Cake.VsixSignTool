@@ -7,15 +7,15 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Cake.VsixSignTool</PackageId>
-    <Title>Cake.AppCenter</Title>
-    <PackageTags>Cake Script Build Test Deploy AppCenter Deployment cake-addin addin cake-build</PackageTags>
+    <Title>Cake.VsixSignTool</Title>
+    <PackageTags>Cake Script Build Test Deploy VsixSignTool Deployment cake-addin addin cake-build</PackageTags>
     <Authors>Miha Markic</Authors>
     <Owners>Miha Markic, cake-contrib</Owners>
-    <Description>AppCenter Addin for Cake Build, Test and Deployment Automation System.</Description>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.AppCenter.git</RepositoryUrl>
+    <Description>VsixSignTool Addin for Cake Build, Test and Deployment Automation System.</Description>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.VsixSignTool.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <IncludeSymbols>true</IncludeSymbols>
-    <PackageProjectUrl>https://github.com/cake-contrib/Cake.AppCenter</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.VsixSignTool</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
