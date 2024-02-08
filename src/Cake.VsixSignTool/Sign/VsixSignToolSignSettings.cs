@@ -11,34 +11,34 @@
         /// This option is mandatory.
         /// </summary>
         [Parameter("f")]
-        public string File { get; set; }
+        public string? File { get; set; }
         /// <summary>
         /// Specify a password to use when opening the PFX file.
         /// </summary>
         [Parameter("p")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
         /// <summary>
         /// Specify the Enhanced Key Usage that must be present in the cert. The parameter may be specified by OID or by string. The default
         /// usage is "Code Signing" (1.3.6.1.5.5.7.3.3).
         /// (This functionality has not been implemented yet.)
         /// </summary>
         [Parameter("u")]
-        public string Usage { get; set; }
+        public string? Usage { get; set; }
         /// <summary>
         /// Specify the SHA1 hash of the signing cert.
         /// </summary>
         [Parameter("sha1")]
-        public string Hash { get; set; }
+        public string? Hash { get; set; }
         /// <summary>
         /// Specify the CSP containing the Private Key Container.
         /// </summary>
         [Parameter("csp")]
-        public string Csp { get; set; }
+        public string? Csp { get; set; }
         /// <summary>
         /// Specify the Key Container Name of the Private Key.
         /// </summary>
         [Parameter("k")]
-        public string KeyContainerName { get; set; }
+        public string? KeyContainerName { get; set; }
         /// <summary>
         /// Embed the signing certificate within the signature part XML. If no "/e." option is specified, "/es" is default.
         /// </summary>
@@ -74,26 +74,26 @@
         /// File digest algorithm.
         /// </summary>
         [Parameter("fd")]
-        public string FileDigestAlgorithm { get; set; }
+        public string? FileDigestAlgorithm { get; set; }
 
         /// <summary>
         ///  Specify the timestamp server's URL. If this option is not present, the signed file will not be timestamped. A warning is
         ///  generated if timestamping fails.
         /// </summary>
         [Parameter("t")]
-        public string TimestampServerUrl { get; set; }
+        public string? TimestampServerUrl { get; set; }
 
         /// <summary>
         /// RFC3161_timestamp_URL
         /// </summary>
         [Parameter("tr")]
-        public string RFC3161TimestampServerUrl { get; set; }
+        public string? RFC3161TimestampServerUrl { get; set; }
 
         /// <summary>
         /// Use with /tr switch only
         /// </summary>
         [Parameter("td")]
-        public string TimestampDigestAlgorithm { get; set; }
+        public string? TimestampDigestAlgorithm { get; set; }
 
         /// <summary>
         /// No output on success and minimal output on failure. As always, VsixSignTool returns 0 on success and 1 on failure.

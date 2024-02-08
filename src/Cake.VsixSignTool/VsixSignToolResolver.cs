@@ -9,7 +9,7 @@ namespace Cake.VsixSignTool
     /// </summary>
     internal static class VsixSignToolResolver
     {
-        public static FilePath GetVsixSignToolPath(IFileSystem fileSystem, ICakeEnvironment environment)
+        public static FilePath? GetVsixSignToolPath(IFileSystem fileSystem, ICakeEnvironment environment)
         {
             if (fileSystem == null)
             {

@@ -48,7 +48,7 @@ namespace Cake.VsixSignTool
             }
             foreach (var property in typeof(TSettings).GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
-                foreach (string argument in GetArgumentFromProperty(property, settings))
+                foreach (string? argument in GetArgumentFromProperty(property, settings))
                 {
                     if (!string.IsNullOrEmpty(argument))
                     {
@@ -82,7 +82,7 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="settings"></param>
         /// <returns></returns>
-        public static IEnumerable<string> GetArgumentFromProperty<TSettings>(PropertyInfo property, TSettings settings)
+        public static IEnumerable<string?> GetArgumentFromProperty<TSettings>(PropertyInfo property, TSettings settings)
             where TSettings : AutoToolSettings, new()
         {
             if (property.PropertyType == typeof(bool))
@@ -93,7 +93,7 @@ namespace Cake.VsixSignTool
                 }
                 else
                 {
-                    yield return GetArgumentFromBoolProperty(property, (bool)property.GetValue(settings));
+                    yield return GetArgumentFromBoolProperty(property, (bool?)property.GetValue(settings));
                 }
             }
             else if (property.PropertyType == typeof(int?))
@@ -106,17 +106,17 @@ namespace Cake.VsixSignTool
             }
             else if (property.PropertyType == typeof(string))
             {
-                yield return GetArgumentFromStringProperty(property, (string)property.GetValue(settings));
+                yield return GetArgumentFromStringProperty(property, (string?)property.GetValue(settings));
             }
             else if (property.PropertyType == typeof(FilePath))
             {
-                var filePath = (FilePath)property.GetValue(settings);
-                string value = filePath?.FullPath;
+                var filePath = (FilePath?)property.GetValue(settings);
+                string? value = filePath?.FullPath;
                 yield return GetArgumentFromStringProperty(property, value);
             }
             else if (property.PropertyType == typeof(string[]))
             {
-                foreach (string arg in GetArgumentFromStringArrayProperty(property, (string[])property.GetValue(settings)))
+                foreach (string? arg in GetArgumentFromStringArrayProperty(property, (string[]?)property.GetValue(settings)))
                 {
                     yield return arg;
                 }
@@ -128,9 +128,13 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string GetArgumentFromBoolProperty(PropertyInfo property, bool value)
+        public static string? GetArgumentFromBoolProperty(PropertyInfo property, bool? value)
         {
-            return value ? $"{PropertyPrefix}{GetPropertyName(property)}" : null;
+            if (value.HasValue)
+            {
+                return value.Value ? $"{PropertyPrefix}{GetPropertyName(property)}" : null;
+            }
+            return null;
         }
         /// <summary>
         /// 
@@ -138,11 +142,11 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string GetArgumentFromNullableBoolProperty(PropertyInfo property, bool? value)
+        public static string? GetArgumentFromNullableBoolProperty(PropertyInfo property, bool? value)
         {
             if (value.HasValue)
             {
-                BoolParameterAttribute attribute = property.GetCustomAttribute<BoolParameterAttribute>();
+                BoolParameterAttribute? attribute = property.GetCustomAttribute<BoolParameterAttribute>();
                 if (attribute == null)
                 {
                     throw new Exception($"{property.Name} isn't attributed with BoolParameterAttribute");
@@ -162,7 +166,7 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string GetArgumentFromEnumProperty(PropertyInfo property, object value)
+        public static string? GetArgumentFromEnumProperty(PropertyInfo property, object? value)
         {
             return value != null ? $"{PropertyPrefix}{GetEnumName(property.PropertyType, value)}" : null;
         }
@@ -173,7 +177,7 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string GetArgumentFromNullableIntProperty(PropertyInfo property, int? value)
+        public static string? GetArgumentFromNullableIntProperty(PropertyInfo property, int? value)
         {
             return value.HasValue ? $"{PropertyPrefix}{GetPropertyName(property)} {value.Value}" : null;
         }
@@ -184,7 +188,7 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="values"></param>
         /// <returns></returns>
-        public static IEnumerable<string> GetArgumentFromStringArrayProperty(PropertyInfo property, string[] values)
+        public static IEnumerable<string?> GetArgumentFromStringArrayProperty(PropertyInfo property, string[]? values)
         {
             if (values != null)
             {
@@ -201,7 +205,7 @@ namespace Cake.VsixSignTool
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string GetArgumentFromStringProperty(PropertyInfo property, string value)
+        public static string? GetArgumentFromStringProperty(PropertyInfo property, string? value)
         {
             return !string.IsNullOrEmpty(value) ? $"{PropertyPrefix}{GetPropertyName(property)} \"{value}\"" : null;
         }
@@ -213,7 +217,7 @@ namespace Cake.VsixSignTool
         /// <returns></returns>
         public static string GetPropertyName(PropertyInfo property)
         {
-            ParameterAttribute attribute = property.GetCustomAttribute<ParameterAttribute>();
+            ParameterAttribute? attribute = property.GetCustomAttribute<ParameterAttribute>();
             if (attribute == null)
             {
                 throw new Exception($"{property.Name} isn't attributed with ParameterAttribute");
@@ -229,9 +233,9 @@ namespace Cake.VsixSignTool
         public static string GetEnumName(Type sourceType, object value)
         {
             Type enumType = IsNullableType(sourceType) ? sourceType.GenericTypeArguments[0] : sourceType;
-            var member = enumType.GetMember(Convert.ToString(value)).Single();
+            var member = enumType.GetMember(Convert.ToString(value)!).Single();
 
-            ParameterAttribute attribute = member.GetCustomAttribute<ParameterAttribute>();
+            ParameterAttribute? attribute = member.GetCustomAttribute<ParameterAttribute>();
             if (attribute == null)
             {
                 throw new Exception($"{member.Name} isn't attributed with ParameterAttribute");

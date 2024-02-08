@@ -1,7 +1,4 @@
-﻿using Cake.Core.IO;
-using NUnit.Framework;
-using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Cake.VsixSignTool.Tests
 {
@@ -15,7 +12,7 @@ namespace Cake.VsixSignTool.Tests
         public static PropertyInfo EnumProperty => GetProperty(nameof(TestSettings.Enum));
         public static PropertyInfo GetProperty(string name)
         {
-            return typeof(TestSettings).GetProperty(name, BindingFlags.Public | BindingFlags.Instance);
+            return typeof(TestSettings).GetProperty(name, BindingFlags.Public | BindingFlags.Instance)!;
         }
         [TestFixture]
         public class GetArgumentFromBoolProperty
@@ -86,7 +83,7 @@ namespace Cake.VsixSignTool.Tests
             {
                 var actual = ArgumentsBuilderExtension.GetArgumentFromStringArrayProperty(StringsProperty, new string[] { "tubo1", "tubo2" });
 
-                Assert.AreEqual(actual.ToArray(), new string[] { "/strs \"tubo1\"", "/strs \"tubo2\"" }); 
+                Assert.That(actual.ToArray(), Is.EqualTo(new string[] { "/strs \"tubo1\"", "/strs \"tubo2\"" })); 
             }
             [Test]
             public void WhenGivenNull_EmptyArrayReturned()
@@ -190,9 +187,9 @@ namespace Cake.VsixSignTool.Tests
     public class TestSettings: AutoToolSettings
     {
         [Parameter("s")]
-        public string String { get; set; }
+        public string? String { get; set; }
         [Parameter("strs")]
-        public string[] Strings { get; set; }
+        public string[]? Strings { get; set; }
         [Parameter("i")]
         public int? NullableInt { get; set; }
         [Parameter("b")]

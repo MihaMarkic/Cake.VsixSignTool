@@ -6,6 +6,11 @@ A Cake AddIn that extends Cake with [VsixSignTool](https://msdn.microsoft.com/en
 [![NuGet](https://img.shields.io/nuget/v/Cake.VsixSignTool.svg)](https://www.nuget.org/packages/Cake.VsixSignTool)
 
 ## Requirements
+* 1.4.0
+
+    - Cake 4.0.0
+    - .net 6+
+
 * 1.3.0: 
 
   - Cake 0.33 or later
